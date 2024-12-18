@@ -79,7 +79,7 @@ def knapsack_func(weights, values, capacity):
 
     model.constraint = Constraint(rule=capacity_constraint_rule)
     # Résolution du modèle
-    opt = SolverFactory(solvername, executable=solver_path, set_executable=False)
+    opt = SolverFactory("glpk")
     results = opt.solve(model)
 
     ## Résultats
