@@ -24,8 +24,6 @@ st.markdown("""
 # Présentation personnelle
 st.header("À propos de moi")
 st.write("""
-Bonjour,
-
 Je suis Médéric PENIGUEL, passionné par l’intelligence artificielle, l’analyse de données et l’utilisation de technologies innovantes pour résoudre les problèmes complexes. Compétent en Mathématiques, Python, Machine learning et deep learning , je recherche un stage de fin d’études pour mettre mes compétences techniques et analytiques au service de projets ambitieux en data engineering et IA. Rigoureux, organisé et créatif, je souhaite contribuer activement en équipe à des solutions innovantes. je suis enthousiaste à l'idée de contribuer à l'innovation culinaire de Quitoque.
 """)
 
