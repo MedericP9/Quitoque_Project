@@ -34,6 +34,17 @@ def knapsack_func(weights, values, capacity):
     
     print(os.getcwd())
     print(solver_path)
+
+    print("Solver path exists:", os.path.exists(solver_path))
+    print("Solver is executable:", os.access(solver_path, os.X_OK))
+    
+    # Si le fichier n'est pas exécutable, modifiez ses permissions
+    if not os.access(solver_path, os.X_OK):
+        try:
+            os.chmod(solver_path, 0o755)  # Rend le fichier exécutable
+            print("Modified file permissions")
+        except Exception as e:
+            print(f"Could not modify permissions: {e}")
     # Création du modèle
     model = ConcreteModel()
 
