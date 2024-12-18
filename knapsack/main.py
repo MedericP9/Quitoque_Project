@@ -18,7 +18,7 @@ from pyomo.environ import *
 
 # Chemins généraux
 root_folder_path = os.getcwd()
-setup_folder_path = root_folder_path + "\\setup"
+setup_folder_path = root_folder_path + "/setup"
 outputs_folder_path = os.path.abspath(os.path.join(root_folder_path, "..", "outputs"))
 
 
@@ -28,7 +28,7 @@ def knapsack_func(weights, values, capacity):
     print(len(weights), len(values), capacity)
     # Pour utiliser pyomo
     solvername = "glpk"
-    solver_path = setup_folder_path + "\\winglpk-4.65\\glpk-4.65\\w64\\glpsol"
+    solver_path = setup_folder_path + "/winglpk-4.65/glpk-4.65/w64/glpsol"
 
     # Création du modèle
     model = ConcreteModel()
