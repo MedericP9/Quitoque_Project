@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 st.sidebar.write("Made by Médéric PENIGUEL")
 st.sidebar.write("My [linkedIn profil](https://www.linkedin.com/in/mederic-peniguel)")
-st.sidebar.write("My [Email](mailto:votre.email@example.com)")
+st.sidebar.write("My [Email](mailto:mederic.peniguel@efrei.net)")
 
 # Titre de l'application
 st.markdown("""
