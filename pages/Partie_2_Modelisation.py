@@ -4,7 +4,6 @@ st.sidebar.write("Made by Médéric PENIGUEL")
 st.sidebar.write("My [linkedIn profil](https://www.linkedin.com/in/mederic-peniguel)")
 st.sidebar.write("My [Email](mailto:mederic.peniguel@efrei.net)")
 
-st.title("PARTIE 2 : Modélisation")
 st.markdown(
     """
     <h2 style='text-align: center; font-size: 28px; color: #4CAF50;'>
