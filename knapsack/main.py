@@ -28,7 +28,7 @@ def knapsack_func(weights, values, capacity):
 
     # Création du DataFrame
     df = pd.DataFrame({
-        'Item': [items[i] for i in selected_items],
+        'Item': [f'Item{i+1}' for i in selected_items],
         'Weight': [weights[i] for i in selected_items],
         'Value': [values[i] for i in selected_items]
     })
