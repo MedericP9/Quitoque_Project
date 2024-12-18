@@ -18,7 +18,7 @@ from pyomo.environ import *
 
 # Chemins généraux
 root_folder_path = os.getcwd()
-setup_folder_path = root_folder_path + "/main/knapsack/setup/"
+setup_folder_path = root_folder_path + "/knapsack/setup/"
 outputs_folder_path = os.path.abspath(os.path.join(root_folder_path, "..", "outputs"))
 
 
