@@ -30,7 +30,7 @@ def knapsack_func(weights, values, capacity):
     # Pour utiliser pyomo
     solvername = "glpk"
     solver_path = setup_folder_path + "winglpk-4.65/glpk-4.65/w64/glpsol"
-
+    print("Contenu du répertoire:", os.listdir(setup_folder_path) if os.path.exists(setup_folder_path) else "Répertoire introuvable")
     
     print(os.getcwd())
     print(solver_path)
