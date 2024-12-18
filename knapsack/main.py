@@ -46,7 +46,7 @@ def knapsack_func(weights, values, capacity):
     selected_items = [i for i in range(len(values)) if x[i].varValue == 1]
 
     # Création d'un DataFrame pour les résultats
-    chosen_objects = [(i, weights[i - 1], values[i - 1]) for i in chosen_items]
+    chosen_objects = [(i, weights[i - 1], values[i - 1]) for i in selected_items]
     df = pd.DataFrame(chosen_objects, columns=["Item", "Weight", "Value"])
 
     # Exportation des résultats dans un fichier Excel
