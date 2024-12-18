@@ -52,7 +52,7 @@ def knapsack_func(weights, values, capacity):
     # Exportation des résultats dans un fichier Excel
     # df.to_excel(outputs_folder_path+'\\chosen_items.xlsx', index=False)
 
-    print(f"{len(chosen_items)} items selected. Results saved to 'chosen_items.xlsx'.")
+    print(f"{len(selected_items)} items selected. Results saved to 'chosen_items.xlsx'.")
     return df
     
 
