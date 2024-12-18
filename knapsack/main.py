@@ -21,6 +21,14 @@ root_folder_path = os.getcwd()
 setup_folder_path = root_folder_path + "/knapsack/setup/"
 outputs_folder_path = os.path.abspath(os.path.join(root_folder_path, "..", "outputs"))
 
+
+if "setup/winglpk-4.65/glpk-4.65/w64/glpsol.exe":
+    version = os.popen(f"{"setup/winglpk-4.65/glpk-4.65/w64/glpsol.exe"} --version").read()
+    print("Version de glpsol :", version)
+else:
+    print("GLPK (glpsol) n'est pas installé.")
+
+
 def knapsack_func(weights, values, capacity):
     # Paramètres
     num_items = len(values)  # Nombre d'objets
@@ -62,7 +70,7 @@ def knapsack_func(weights, values, capacity):
 
     model.constraint = Constraint(rule=capacity_constraint_rule)
     # Résolution du modèle
-    opt = SolverFactory(solvername, executable="https://github.com/MedericP9/Quitoque_Project/blob/e620fe38cae2bb0cb77d1c892cfecfc3bfe8c8fd/knapsack/setup/winglpk-4.65/glpk-4.65/w64/glpsol.exe", set_executable=False)
+    opt = SolverFactory(solvername, executable="setup/winglpk-4.65/glpk-4.65/w64/glpsol.exe", set_executable=False)
     results = opt.solve(model)
 
     ## Résultats
