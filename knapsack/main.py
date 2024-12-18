@@ -22,7 +22,7 @@ setup_folder_path = root_folder_path + "/knapsack/setup/"
 outputs_folder_path = os.path.abspath(os.path.join(root_folder_path, "..", "outputs"))
 
 glpsol_path = os.popen("which glpsol").read().strip()
-st.write("Chemin de glpsol :", glpsol_path)
+print("Chemin de glpsol :", glpsol_path)
 
 # Vérifie la version de glpsol (si disponible)
 if glpsol_path:
