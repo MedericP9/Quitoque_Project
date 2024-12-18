@@ -32,7 +32,7 @@ def knapsack_func(weights, values, capacity):
         'Weight': [weights[i] for i in selected_items],
         'Value': [values[i] for i in selected_items]
     })
-    df = df.sort_values(by='ITEM').reset_index(drop=True)
+    df = df.sort_values(by='Item').reset_index(drop=True)
     print(f"{len(selected_items)} items selected. Results saved to 'chosen_items.xlsx'.")
     
     return df
