@@ -23,7 +23,63 @@ outputs_folder_path = os.path.abspath(os.path.join(root_folder_path, "..", "outp
 
 
 
+
+from swiglpk import glp
+
+def solve_linear_problem():
+    # Créer un problème
+    lp = glp.glp_create_prob()
+    glp.glp_set_prob_name(lp, "Exemple")
+    glp.glp_set_obj_dir(lp, glp.GLP_MAX)
+
+    # Ajouter des variables
+    glp.glp_add_cols(lp, 2)
+    glp.glp_set_col_name(lp, 1, "x1")
+    glp.glp_set_col_bnds(lp, 1, glp.GLP_LO, 0.0, 0.0)  # x1 >= 0
+    glp.glp_set_obj_coef(lp, 1, 3.0)  # Coefficient objectif pour x1
+    glp.glp_set_col_name(lp, 2, "x2")
+    glp.glp_set_col_bnds(lp, 2, glp.GLP_LO, 0.0, 0.0)  # x2 >= 0
+    glp.glp_set_obj_coef(lp, 2, 5.0)  # Coefficient objectif pour x2
+
+    # Ajouter une contrainte
+    glp.glp_add_rows(lp, 1)
+    glp.glp_set_row_name(lp, 1, "c1")
+    glp.glp_set_row_bnds(lp, 1, glp.GLP_UP, 0.0, 10.0)  # Contraintes x1 + x2 <= 10
+
+    ia = glp.intArray(3)
+    ja = glp.intArray(3)
+    ar = glp.doubleArray(3)
+
+    ia[1], ja[1], ar[1] = 1, 1, 1.0  # Coefficient de x1
+    ia[2], ja[2], ar[2] = 1, 2, 1.0  # Coefficient de x2
+    glp.glp_load_matrix(lp, 2, ia, ja, ar)
+
+    # Résoudre
+    simplex = glp.glp_simplex
+    simplex(lp, None)
+
+    # Obtenir les résultats
+    z = glp.glp_get_obj_val(lp)
+    x1 = glp.glp_get_col_prim(lp, 1)
+    x2 = glp.glp_get_col_prim(lp, 2)
+
+    # Nettoyer
+    glp.glp_delete_prob(lp)
+
+    return z, x1, x2
+
+
+
+
+
+
+
+
+
 def knapsack_func(weights, values, capacity):
+
+
+    print(solve_linear_problem())
     # Paramètres
     num_items = len(values)  # Nombre d'objets
     print(len(weights), len(values), capacity)
