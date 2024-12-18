@@ -4,7 +4,7 @@ from pulp import *
 
 def knapsack_func(weights, values, capacity):
 
-n = len(values)
+    n = len(values)
     dp = [[0] * (capacity + 1) for _ in range(n + 1)]
 
     # Remplissage de la table de programmation dynamique
