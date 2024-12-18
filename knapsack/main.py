@@ -15,11 +15,15 @@ def knapsack_func(weights, values, capacity):
             else:
                 dp[i][w] = dp[i - 1][w]
 
-    # Poids total maximal atteint
-    max_weight = max(w for w in range(capacity + 1) if dp[n][w] > 0)
+    # Recherche du poids total maximal atteint avec la valeur la plus élevée
+    max_value = dp[n][capacity]
+    min_weight = float('inf')
+    for w in range(capacity + 1):
+        if dp[n][w] == max_value:
+            min_weight = min(min_weight, w)
 
     # Récupération des objets sélectionnés
-    w = max_weight
+    w = min_weight  # On utilise le poids minimum correspondant à la valeur maximale
     selected_items = []
     for i in range(n, 0, -1):
         if dp[i][w] != dp[i - 1][w]:
