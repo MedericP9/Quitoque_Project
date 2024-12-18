@@ -4,7 +4,7 @@ from pulp import *
 
 def knapsack_func(weights, values, capacity):
 
-    n = len(values)
+n = len(values)
     dp = [[0] * (capacity + 1) for _ in range(n + 1)]
 
     # Remplissage de la table de programmation dynamique
@@ -15,11 +15,11 @@ def knapsack_func(weights, values, capacity):
             else:
                 dp[i][w] = dp[i - 1][w]
 
-    # Valeur maximale obtenue
-    max_value = dp[n][capacity]
+    # Poids total maximal atteint
+    max_weight = max(w for w in range(capacity + 1) if dp[n][w] > 0)
 
     # Récupération des objets sélectionnés
-    w = capacity
+    w = max_weight
     selected_items = []
     for i in range(n, 0, -1):
         if dp[i][w] != dp[i - 1][w]:
