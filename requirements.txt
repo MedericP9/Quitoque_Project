@@ -2,3 +2,4 @@ streamlit
 pyomo
 swiglpk
 matplotlib
+pulp
