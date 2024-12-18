@@ -22,12 +22,6 @@ setup_folder_path = root_folder_path + "/knapsack/setup/"
 outputs_folder_path = os.path.abspath(os.path.join(root_folder_path, "..", "outputs"))
 
 
-if "setup/winglpk-4.65/glpk-4.65/w64/glpsol.exe":
-    version = os.popen(f"{"setup/winglpk-4.65/glpk-4.65/w64/glpsol.exe"} --version").read()
-    print("Version de glpsol :", version)
-else:
-    print("GLPK (glpsol) n'est pas installé.")
-
 
 def knapsack_func(weights, values, capacity):
     # Paramètres
@@ -36,6 +30,10 @@ def knapsack_func(weights, values, capacity):
     # Pour utiliser pyomo
     solvername = "glpk"
     solver_path = setup_folder_path + "winglpk-4.65/glpk-4.65/w64/glpsol"
+
+    
+    print(os.getcwd())
+    print(solver_path)
     # Création du modèle
     model = ConcreteModel()
 
