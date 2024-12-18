@@ -61,8 +61,7 @@ else:
 
 
         # Capacité totale et poids utilisé
-        temp_df = selected_items[selected_items["SELECTED"]==True]
-        total_weight = sum(temp_df["Weight"])
+        total_weight = sum(selected_items["Weight"])
         fig, ax = plt.subplots()
         ax.barh(["Capacity", "Weight used"], [capacity, total_weight], color=["grey", "green"])
         ax.set_title("Utilisation de la capacité du sac à dos")
