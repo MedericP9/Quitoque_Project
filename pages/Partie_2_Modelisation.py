@@ -379,7 +379,7 @@ st.markdown(
 st.markdown(
     """
         <div style="text-align: justify;">
-        Cette approche, qu'elle soit basée sur des règles ou des modèles de machine learning, vise à estimer la répartition des commandes pour de nouvelles recettes. 
+        Ces approches, qu'elles soient basées sur les similarités ou des modèles de machine learning, vise à estimer la répartition des commandes pour de nouvelles recettes. 
         Bien que des ajustements et une réflexion plus profonde soient nécessaires pour surmonter certaines limites, ces solutions offrent une bonne base pour résoudre ce type de problème.
         </div>
         """,
