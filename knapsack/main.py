@@ -21,24 +21,13 @@ root_folder_path = os.getcwd()
 setup_folder_path = root_folder_path + "/knapsack/setup/"
 outputs_folder_path = os.path.abspath(os.path.join(root_folder_path, "..", "outputs"))
 
-glpsol_path = os.popen("which glpsol").read().strip()
-print("Chemin de glpsol :", glpsol_path)
-
-# Vérifie la version de glpsol (si disponible)
-if glpsol_path:
-    version = os.popen(f"{glpsol_path} --version").read()
-    print("Version de glpsol :", version)
-    print(glpsol_path)
-else:
-    print("GLPK (glpsol) n'est pas installé.")
-    
 def knapsack_func(weights, values, capacity):
     # Paramètres
     num_items = len(values)  # Nombre d'objets
     print(len(weights), len(values), capacity)
     # Pour utiliser pyomo
     solvername = "glpk"
-    solver_path = "/setup/winglpk-4.65/glpk-4.65/w64/glpsol.exe"
+    solver_path = setup_folder_path + "winglpk-4.65/glpk-4.65/w64/glpsol.exe"
     # Création du modèle
     model = ConcreteModel()
 
