@@ -27,10 +27,10 @@ st.write("Chemin de glpsol :", glpsol_path)
 # Vérifie la version de glpsol (si disponible)
 if glpsol_path:
     version = os.popen(f"{glpsol_path} --version").read()
-    st.write("Version de glpsol :", version)
-    st.write(glpsol_path)
+    print("Version de glpsol :", version)
+    print(glpsol_path)
 else:
-    st.write("GLPK (glpsol) n'est pas installé.")
+    print("GLPK (glpsol) n'est pas installé.")
     
 def knapsack_func(weights, values, capacity):
     # Paramètres
