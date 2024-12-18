@@ -21,7 +21,17 @@ root_folder_path = os.getcwd()
 setup_folder_path = root_folder_path + "/knapsack/setup/"
 outputs_folder_path = os.path.abspath(os.path.join(root_folder_path, "..", "outputs"))
 
+glpsol_path = os.popen("which glpsol").read().strip()
+st.write("Chemin de glpsol :", glpsol_path)
 
+# Vérifie la version de glpsol (si disponible)
+if glpsol_path:
+    version = os.popen(f"{glpsol_path} --version").read()
+    st.write("Version de glpsol :", version)
+    st.write(glpsol_path)
+else:
+    st.write("GLPK (glpsol) n'est pas installé.")
+    
 def knapsack_func(weights, values, capacity):
     # Paramètres
     num_items = len(values)  # Nombre d'objets
