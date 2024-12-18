@@ -33,8 +33,5 @@ def knapsack_func(weights, values, capacity):
         'Value': [values[i] for i in selected_items]
     })
 
-    # Ajouter une colonne 'SELECTED' pour indiquer si l'objet est sélectionné
-    df['SELECTED'] = df.index.isin(selected_items)
-
     print(f"{len(selected_items)} items selected. Results saved to 'chosen_items.xlsx'.")
     return df
