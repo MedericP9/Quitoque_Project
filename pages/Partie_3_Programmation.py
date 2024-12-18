@@ -13,7 +13,7 @@ st.markdown("""
     </h2>
     """, unsafe_allow_html=True)
 
-st.write("⚠️ Pour la version déployée de l'application Streamlit, j'ai recodé le solveur en Python (code disponible en annexe) afin qu'il fonctionne dans un environnement Linux, comme celui de Streamlit Cloud. La version utilisant le solveur fourni est néanmoins disponible dans les fichiers transmis avec le lien de cette application Streamlit.") 
+st.write("⚠️ Pour la version déployée de l'application Streamlit, j'ai recodé le solveur en Python afin qu'il fonctionne dans un environnement Linux, comme celui de Streamlit Cloud. La version utilisant le solveur fourni est néanmoins disponible dans les fichiers transmis avec le lien de cette application Streamlit.") 
 
 st.header("Paramètres du problème")
 values = st.text_input(
