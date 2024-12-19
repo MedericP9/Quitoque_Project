@@ -60,12 +60,18 @@ st.markdown(
     f"""
     <div style="text-align: justify;">
 Je ne peux pas mettre en place directement un modèle car les données disponibles ne sont pas numériques mais textuelles. Je commencerai donc par nettoyer et normaliser le texte : 
-        **suppression des caractères spéciaux*
-         - suppression des accents et conversion des lettres majuscules en minuscules.
-        **Traitement des valeurs manquantes :**
-        - Lorsque des informations sont manquantes, plusieurs stratégies peuvent être utilisées : suppression, imputation, etc.
-        **Normalisation des données :**
-        - Pour rendre les features comparables entre elles, on peut normaliser ou standardiser les valeurs (par exemple, en utilisant la méthode Min-Max ou Z-score).
+
+**suppression des caractères spéciaux**
+
+- suppression des accents et conversion des lettres majuscules en minuscules.
+
+**Traitement des valeurs manquantes :**
+
+- Lorsque des informations sont manquantes, plusieurs stratégies peuvent être utilisées : suppression, imputation, etc.
+
+**Normalisation des données :**
+
+- Pour rendre les features comparables entre elles, on peut normaliser ou standardiser les valeurs (par exemple, en utilisant la méthode Min-Max ou Z-score).
         
  </br>
  </br>
